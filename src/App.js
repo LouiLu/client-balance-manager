@@ -15,6 +15,7 @@ import AddClient from './components/client/AddClient';
 import ClientDetails from './components/client/ClientDetails';
 import EditClient from './components/client/EditClient';
 import Login from './components/auth/Login';
+import Register from './components/auth/Register';
 import Settings from './components/settings/Settings';
 
 function App() {
@@ -34,6 +35,11 @@ function App() {
                 exact
                 path="/login"
                 component={UserIsNotAuthenticated(Login)}
+              />
+              <Route
+                exact
+                path="/register"
+                component={UserIsNotAuthenticated(Register)}
               />
               <Route
                 exact

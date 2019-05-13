@@ -22,6 +22,7 @@ class Settings extends Component {
   };
 
   allowRegistrationChange = e => {
+    console.log('changing');
     const { setAllRegistration } = this.props;
 
     setAllRegistration();
@@ -49,7 +50,7 @@ class Settings extends Component {
               <div className="form-group">
                 <label>Allow Registration</label>
                 <input
-                  type="radio"
+                  type="checkbox"
                   className="form-check form-check-inline ml-4"
                   name="allowRegistration"
                   checked={!!allowRegistration}
@@ -59,7 +60,7 @@ class Settings extends Component {
               <div className="form-group">
                 <label>Disable Balance on Add</label>
                 <input
-                  type="radio"
+                  type="checkbox"
                   className="form-check form-check-inline ml-4"
                   name="disableBalanceOnAdd"
                   checked={!!disableBalanceOnAdd}
@@ -69,7 +70,7 @@ class Settings extends Component {
               <div className="form-group">
                 <label>Disable Balance on Edit</label>
                 <input
-                  type="radio"
+                  type="checkbox"
                   className="form-check form-check-inline ml-4"
                   name="disableBalanceOnEdit"
                   checked={!!disableBalanceOnEdit}
@@ -94,7 +95,7 @@ Settings.propTypes = {
 
 export default connect(
   (state, props) => ({
-    auth: state.firebase.auth,
+    firebase: state.firebase,
     settings: state.settings
   }),
   { setAllRegistration, setDisableBalanceOnAdd, setDisableBalanceOnEdit }
